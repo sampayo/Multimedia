@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20111127161210) do
   create_table "usuarios", :force => true do |t|
     t.string   "nombre"
     t.string   "seudonimo"
+    t.string   "pass"
     t.text     "biografia"
     t.string   "web"
     t.string   "lenguaje"

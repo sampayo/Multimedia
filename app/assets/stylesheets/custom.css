@@ -5,8 +5,10 @@
 }
 
 body {
-	background-color: #cff;
+	background-color: #ccffff;
 }
+
+
 
 header {
 	padding-top: 20px;
@@ -14,7 +16,6 @@ header {
 
 header img {
 	padding: 1em;
-	background-color: #fff;
 }
 
 section {
@@ -117,6 +118,21 @@ footer nav {
 	float: none;
 }
 
+#registro {
+	margin-left: 60%;
+	width: 220px;
+	padding: 20px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	background-color: #edffff;
+}
+#derHome {
+	float: left;
+	width: 350px;
+	padding: 20px;
+
+}
 
 
 

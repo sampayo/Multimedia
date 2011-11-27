@@ -1,18 +1,25 @@
 class PagesController < ApplicationController
+  layout 'login'
   def home
-  	@title = "Home"
+    @title = "Inicio"
+    @usuario = Usuario.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @usuario }
+    end
   end
 
   def contact
-  	@title = "Contact"
+    @title = "Contact"
   end
 
   def about
-  	@title = "About"
+    @title = "About"
   end
 
   def help
-  	@title = "Help"
+    @title = "Help"
   end
 
 end

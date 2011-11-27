@@ -1,10 +1,18 @@
 <header>
-	<%= link_to logo, root_path %>
+	<%= link_to logo, root_path, :class => "logo" %>
 	<nav class="round">
-		<ul>
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "Help", help_path %></li>
-			<li><%= link_to "Sign in", signup_path %></li>
-		</ul>
+		<form>
+			<ul>
+				<li>
+					<INPUT type="text" id="nombre" value ="Usuario" class = "signup_button round">
+				</li>
+				<li>
+					<INPUT type="text" id="pass" value ="Contrasena" class = "signup_button round">
+				</li>
+				<li>
+					<INPUT type="button" id="Enviar" value="Loging" class = "signup_button round">
+				</li>
+			</ul>
+		</form>
 	</nav>
 </header>
