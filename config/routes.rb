@@ -12,6 +12,8 @@ SampleApp::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
+  match '/validar', :to => 'pages#validar', :as => 'validar'
+
   # get "pages/home"
 
   # get "pages/contact"
@@ -71,9 +73,9 @@ SampleApp::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'pages#home'
 
-  # See how all your routes lay out with "rake routes"
+# See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+# match ':controller(/:action(/:id(.:format)))'
 end

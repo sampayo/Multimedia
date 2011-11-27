@@ -1,18 +1,25 @@
 <header>
 	<%= link_to logo, root_path, :class => "logo" %>
 	<nav class="round">
-		<form>
+		<% if session[:nombre].nil? %>
+		<%= form_for(:pages, :url => {:controller => 'pages', :action => 'validar'}) do |f| %>
+		<div id="formHeader">
 			<ul>
 				<li>
-					<INPUT type="text" id="nombre" value ="Usuario" class = "signup_button round">
+					<%= f.text_field :nombre, :class => "signup_button round" , :placeholder => "Usuario"  %>
 				</li>
 				<li>
-					<INPUT type="text" id="pass" value ="Contrasena" class = "signup_button round">
+					<%= f.password_field :pass, :class => "signup_button round" , :placeholder => "Password"  %>
 				</li>
 				<li>
-					<INPUT type="button" id="Enviar" value="Loging" class = "signup_button round">
+					<%= f.submit :class => "round" , :value => 'Enviar'  %>
 				</li>
 			</ul>
-		</form>
+		</div>
+		<% end %>
+		<%
+		else
+		%> dsdds <%
+		end %>
 	</nav>
 </header>

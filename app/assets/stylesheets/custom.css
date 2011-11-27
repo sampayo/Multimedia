@@ -3,84 +3,66 @@
 .container {
 	width: 710px;
 }
-
 body {
 	background-color: #ccffff;
 }
-
-
-
 header {
 	padding-top: 20px;
 }
-
 header img {
 	padding: 1em;
 }
-
 section {
 	margin-top: 1em;
 	font-size: 120%;
 	padding: 20px;
 	background-color: #fff;
 }
-
 section h1 {
 	font-size: 200%;
 }
-
 /* Links */
 
 a {
 	color: #09c;
 	text-decoration: none;
 }
-
 a:hover {
 	color: #069;
 	text-decoration: underline;
 }
-
 a:visited {
 	color: #069;
 }
-
 /* Navigation */
 
 nav {
 	float: right;
 }
-
 nav {
 	background-color: #fff;
 	padding: 0 0.7em;
 	white-space: nowrap;
 }
-
 nav ul {
 	margin: 0;
 	padding: 0;
 }
-
 nav ul li {
 	list-style-type: none;
 	display: inline-block;
 	padding: 0.2em 0;
 }
-
 nav ul li a {
 	padding: 0 5px;
 	font-weight: bold;
 }
-
 nav ul li a:visited {
 	color: #09c;
 }
-
 nav ul li a:hover {
 	text-decoration: underline;
 }
-
 /* Sign up button */
 
 a.signup_button {
@@ -95,7 +77,6 @@ a.signup_button {
 	font-weight: bold;
 	padding: 20px;
 }
-
 /* Round corners */
 
 .round {
@@ -103,6 +84,10 @@ a.signup_button {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
+#formHeader input{
+	width: 120px;
+}
+
 
 /* Footer */
 
@@ -113,11 +98,9 @@ footer {
 	width: 710px;
 	margin-top: 10px;
 }
-
 footer nav {
 	float: none;
 }
-
 #registro {
 	margin-left: 60%;
 	width: 220px;
@@ -131,13 +114,18 @@ footer nav {
 	float: left;
 	width: 350px;
 	padding: 20px;
-
 }
+#notice {
+	text-align: center;
+	font-weight: bold;
+	color: #63d4f4;
+}
+/* all */
 
-
-
-
-
+input[placeholder], [placeholder], *[placeholder] {
+	color: #4c4c4c;
+	text-align: center;
+}
 
 
 

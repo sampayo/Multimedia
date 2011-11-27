@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   layout 'login'
   def home
+    session[:nombre]=nil
     @title = "Inicio"
     @usuario = Usuario.new
 
@@ -21,5 +22,22 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
+  
+  def validar
+    @info=params['pages']
+    if @info['nombre'] == "" || @info['pass'] == ""
+     redirect_to root_path, notice: 'Usuario o clave invalida' 
+    else
+      @usuario = Usuario.where(:seudonimo => @info['nombre'], :pass => @info['pass']).first
+      if @usuario.nil?
+             redirect_to root_path, notice: 'Usuario o clave invalida'         
+      end
+      session[:nombre] = @usuario.seudonimo
+      redirect_to comentarios_path
+    end
+    
+    
+    # redirec_to root_path
+  end  
 
 end
