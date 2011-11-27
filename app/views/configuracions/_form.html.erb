@@ -1,0 +1,21 @@
+<%= form_for(@configuracion) do |f| %>
+  <% if @configuracion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@configuracion.errors.count, "error") %> prohibited this configuracion from being saved:</h2>
+
+      <ul>
+      <% @configuracion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fodo %><br />
+    <%= f.text_field :fodo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
