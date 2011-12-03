@@ -4,15 +4,21 @@ SampleApp::Application.routes.draw do
   resources :configuracions
 
   resources :usuarios
+  
+    resources :user
+
 
   get "users/new"
 
   match '/signup', :to => 'users#new'
-
+  # pages
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   match '/validar', :to => 'pages#validar', :as => 'validar'
+
+  #user
+  match '@:seudo', :to => 'users#show', :as => 'user'
 
   # get "pages/home"
 

@@ -3,6 +3,7 @@ class CreateSeguidores < ActiveRecord::Migration
     create_table :seguidores do |t|
       t.references :usuarios
       t.references :seguidor
+      t.integer :simpatia
       t.timestamps
     end
   end

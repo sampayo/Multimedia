@@ -22,22 +22,23 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
-  
+
   def validar
     @info=params['pages']
     if @info['nombre'] == "" || @info['pass'] == ""
-     redirect_to root_path, notice: 'Usuario o clave invalida' 
+    redirect_to root_path, notice: 'Usuario o clave invalida'
     else
       @usuario = Usuario.where(:seudonimo => @info['nombre'], :pass => @info['pass']).first
       if @usuario.nil?
-             redirect_to root_path, notice: 'Usuario o clave invalida'         
-      end
+      redirect_to root_path, notice: 'Usuario o clave invalida'
+      else
       session[:nombre] = @usuario.seudonimo
       redirect_to comentarios_path
+      end
+
     end
-    
-    
-    # redirec_to root_path
-  end  
+
+  # redirec_to root_path
+  end
 
 end

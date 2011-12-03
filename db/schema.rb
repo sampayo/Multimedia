@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127161210) do
+ActiveRecord::Schema.define(:version => 20111202222844) do
 
   create_table "comentarios", :force => true do |t|
     t.text     "comentario"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(:version => 20111127161210) do
   create_table "seguidores", :force => true do |t|
     t.integer  "usuarios_id"
     t.integer  "seguidor_id"
+    t.integer  "simpatia"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
