@@ -1,11 +1,13 @@
 SampleApp::Application.routes.draw do
+  resources :seguidores
+
   resources :comentarios
 
   resources :configuracions
 
   resources :usuarios
 
-  resources :user
+  resources :users
 
   get "users/new"
 
@@ -19,6 +21,9 @@ SampleApp::Application.routes.draw do
   #user
   match 'timeline', :to => 'users#new', :as => 'time'
   match '@:seudo', :to => 'users#show', :as => 'user'
+  match '/save', :to => 'users#save'
+  match '/destroy', :to => 'users#destroy'
+
 
   # get "pages/home"
 

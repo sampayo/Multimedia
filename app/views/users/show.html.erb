@@ -26,15 +26,34 @@
 		</div>
 	</div>
 	<div class="span-14">
-		<h3>Que esta pasando?</h3>
-		<%= form_for(:pages, :url => {:controller => 'pages', :action => 'validar'}) do |f| %>
-		<div id="formHeader">
-			<%= f.text_area :nombre, :class => "signup_button round", :id => "twittear", :maxlength => "140", :onKeyDown => "cuenta()", :onKeyUp => "cuenta()"  %>
+		<div id="formperfil">
+			<div id="imagenPerfil"></div>
+			<div id ="informacion">
+				<h2><%= @usuario.nombre %></h2>
+				<p>
+					<b>@<%= @usuario.seudonimo %></b> <%= @usuario.zonah %>
+				</p>
+				<p>
+					<%= @usuario.biografia %>
+				</p>
+				<% if session[:nombre] == @user %>
+				<%= link_to "editar perfil", edit_usuario_path(@usuariosession.id) %>
+				<% elsif !(session[:nombre].nil?) %>
+				<% if @seguido == true %>
+				<%= form_for(:user, :url => {:controller => 'users', :action => 'save'}) do |f| %>
+				<%= f.hidden_field :seudonimo, :value => @user %>
+				<%= f.submit :class => "round" , :value => 'Seguir' %>
+				<%end%>
+				<%else%>
+				<%=form_for(:user, :url => {:controller => 'users', :action => 'destroy'}) do |f|%>
+				<%= f.hidden_field :seudonimo, :value => @user%>
+				<%=  f.submit :class => "round" , :value => 'Dejde seguir'%>
+				<%end%>
+				<%end %>
 
-			<%= f.submit :class => "round", :id => "buttonTwitter" , :value => 'Twttear'  %>
-			<input type="text" name='caracteres' id="caracteresTwitter" readonly="readonly">
+				<%end %>
+			</div>
 		</div>
-		<% end %>
 		<div >
 			<p id="notice">
 				<%= notice %>
@@ -57,6 +76,4 @@
 function cuenta() {
 document.getElementById("caracteresTwitter").value=document.getElementById("twittear").value.length
 }
-
-
 </script>

@@ -1,0 +1,21 @@
+<h1>Listing seguidores</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @seguidores.each do |seguidore| %>
+  <tr>
+    <td><%= link_to 'Show', seguidore %></td>
+    <td><%= link_to 'Edit', edit_seguidore_path(seguidore) %></td>
+    <td><%= link_to 'Destroy', seguidore, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Seguidore', new_seguidore_path %>

@@ -1,0 +1,17 @@
+<%= form_for(@seguidore) do |f| %>
+  <% if @seguidore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@seguidore.errors.count, "error") %> prohibited this seguidore from being saved:</h2>
+
+      <ul>
+      <% @seguidore.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
