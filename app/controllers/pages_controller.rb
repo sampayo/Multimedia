@@ -33,7 +33,7 @@ class PagesController < ApplicationController
       redirect_to root_path, notice: 'Usuario o clave invalida'
       else
       session[:nombre] = @usuario.seudonimo
-      redirect_to comentarios_path
+      redirect_to time_path
       end
 
     end

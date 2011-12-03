@@ -4,9 +4,8 @@ SampleApp::Application.routes.draw do
   resources :configuracions
 
   resources :usuarios
-  
-    resources :user
 
+  resources :user
 
   get "users/new"
 
@@ -18,6 +17,7 @@ SampleApp::Application.routes.draw do
   match '/validar', :to => 'pages#validar', :as => 'validar'
 
   #user
+  match 'timeline', :to => 'users#new', :as => 'time'
   match '@:seudo', :to => 'users#show', :as => 'user'
 
   # get "pages/home"

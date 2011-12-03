@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
   def new
-    @title = "Sign up"
+    @title = "TimeLine"
+    @user = session[:nombre]
+    @usuario = Usuario.where(:seudonimo => @user).first    
+    @comentarios = User.timeLine(@user)
+    @seguidores = User.seguidores(@user)
+    @siguiendo = User.siguiendo(@user)
   end
 
   def show
-    @comentario = params[:seudo]
-    @comentarios = User.timeLine(@comentario)
-    @seguidores = User.seguidores(@comentario)
-    @siguiendo = User.siguiendo(@comentario)
+    @title = "@" + params[:seudo].to_s    
+    @user = params[:seudo]
+    @usuario = Usuario.where(:seudonimo => @user).first
+    @comentarios = User.timeLine(@user)
+    @seguidores = User.seguidores(@user)
+    @siguiendo = User.siguiendo(@user)
 
   end
 end

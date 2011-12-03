@@ -1,0 +1,10 @@
+  <style type="text/css">
+  #foto {
+  	<% if !(@usuario.foto.nil?) %>
+	background-size: 100%;
+	background-image: url(<%= image_path("fotos/"+@usuario.foto) %>);
+	<% else %>
+	background-size: 100%;
+	<% end %>
+}
+  </style>
