@@ -2,9 +2,10 @@
   #foto, #imagenPerfil {
   	<% if !(@usuario.foto.nil?) %>
 	background-size: 100%;
-	background-image: url(<%= image_path("fotos/"+@usuario.foto) %>);
+	background-image: url(<%= image_path ('fotos/sampayo.jpg') %>); 
 	<% else %>
 	background-size: 100%;
 	<% end %>
+	
 }
   </style>

@@ -168,7 +168,7 @@ input[placeholder], [placeholder], *[placeholder] {
 	width: 80px;
 	height: 80px;
 	/*	background-size: 100%;*/
-	background-image: url(fotos/twitter.jpg);
+	background-image: url('fotos/twitter.jpg');
 }
 .menu-holder {
 	border-bottom: 1px solid #ccffff;
