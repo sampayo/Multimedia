@@ -26,6 +26,8 @@ SampleApp::Application.routes.draw do
   match '/destroy', :to => 'users#destroy'
 
 
+  # usuario
+  match 'usuarios/:id/perfil', :to => 'usuarios#perfil', :as => 'perfil'
   # get "pages/home"
 
   # get "pages/contact"

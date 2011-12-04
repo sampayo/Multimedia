@@ -1,0 +1,26 @@
+
+<%= render('users/style') %>
+<div class="seccion2">
+	<h1>Configuracion</h1>
+	<div class="editar">
+	<%= render('menuDer') %>
+	<div id="formperfil">
+			<div id="imagenPerfil"></div>
+			<div id ="informacion2">
+				<h2><%= @usuario.nombre %></h2>
+				<%= form_for(:user, :url => {:controller => 'usuarios', :action => 'perfil'}) do |f| %>
+				<p>
+					<b><%= f.label :Foto %></b> <%= file_field_tag :foto , :id => 'buttonExaminar'%>
+				</p>
+				<p>
+					<%= submit_tag "Subir foto" %>
+				</p>
+				
+
+				<%end %>
+			</div>
+		</div>
+	
+	<%= link_to 'Atras', user_path(@usuario.seudonimo) %>
+	</div>
+</div>
