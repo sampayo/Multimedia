@@ -40,17 +40,13 @@ class ComentariosController < ApplicationController
   # POST /comentarios
   # POST /comentarios.json
   def create
-    @comentario = Comentario.new(params[:comentario])
-
-    respond_to do |format|
-      if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
-        format.json { render json: @comentario, status: :created, location: @comentario }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comentario.errors, status: :unprocessable_entity }
-      end
-    end
+    @comentario = params['comentario']
+    @comen = @comentario['nombre']
+    @user = Usuario.where(:seudonimo => session[:nombre] ).first
+    Comentario.buscar(@comen,@user.id)
+    @comentario = Comentario.new(:usuarios_id => @user.id, :comentario => @comen)
+    @comentario.save
+    redirect_to time_path
   end
 
   # PUT /comentarios/1

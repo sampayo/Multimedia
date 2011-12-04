@@ -1,0 +1,25 @@
+<div class="span-7">
+	<div id = "perfil">
+		<h3 class="fotonombre"><%= link_to "@" + @user, user_path(@user) %></h3><div id="foto"></div> 
+	</div>
+	<div class="submenu">
+		<h4 align="center">Seguidores</h4>
+		<ul>
+			<% @seguidores.each do |segui| %>
+			<li>
+				<a><%= link_to "@" + segui.seudonimo, user_path(segui.seudonimo) %> (<%= segui.nombre %>)</a>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="submenu">
+		<h4 align="center">Siguiendo</h4>
+		<ul>
+			<% @siguiendo.each do |segui| %>
+			<li>
+				<a><%= link_to "@" + segui.seudonimo, user_path(segui.seudonimo) %> (<%= segui.nombre %>)</a>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>

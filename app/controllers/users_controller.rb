@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show
     @title = "@" + params[:seudo].to_s
     @user = params[:seudo]
+    # @primera = @user[6];
+    # @tama = @user.length
     @usuario = Usuario.where(:seudonimo => @user).first
     if (session[:nombre])
       @usuariosession = Usuario.where(:seudonimo => session[:nombre]).first
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
       end
 
     end
-    @comentarios = User.timeLine(@user)
+    @comentarios = User.comentarios1(@usuario.id)
     @seguidores = User.seguidores(@user)
     @siguiendo = User.siguiendo(@user)
 

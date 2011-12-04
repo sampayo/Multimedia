@@ -1,0 +1,29 @@
+			<table width="80%">
+				<% @comentarios.each do |comen| %>
+				<tr align="Center">
+					<td><b><%= comen.seudonimo %></b> <%= comen.nombre %></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2"> 
+					<% @comentario=comen.comentario.split(' ') %>
+					<% @comentario.each do |comen2| %>
+					<% if comen2[0] == '@' %>
+						 <% if (validar(comen2)) %>
+						 <%= link_to comen2 , user_path(comen2[1..comen2.length]) %>
+						<% else %>
+						<%= comen2 %>
+						<% end %>					
+					
+					
+					<% elsif comen2[0] =="#" %>
+					<hash> <%= comen2 %> </hash>
+					
+					<% else %>
+					<%= comen2 %>
+					<% end %>
+					<% end %>
+					</td>
+				</tr>
+				<% end %>
+			</table>

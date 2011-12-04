@@ -41,4 +41,20 @@ class PagesController < ApplicationController
   # redirec_to root_path
   end
 
+  def buscar
+    @title = "Buscar"
+    @ids = params['buscar']
+    @comentarios = User.buscar(@ids['nombre'])
+    if session[:nombre]
+    @user = session[:nombre]
+    @usuario = Usuario.where(:seudonimo => @user).first
+    @seguidores = User.seguidores(@user)
+    @siguiendo = User.siguiendo(@user)
+    @apro = true
+    else
+    @apro = false
+    end
+
+  end
+
 end

@@ -22,7 +22,7 @@
 	else%> </nav>
 	<div class="menu-holder">
 		<ul id="nav">
-			<%= form_for(:pages, :url => {:controller => 'pages', :action => 'validar'}) do |f| %>
+			<%= form_for(:buscar, :url => {:controller => 'pages', :action => 'buscar'}) do |f| %>
 			<div id ="Search">
 				<li>
 					<%= f.text_field :nombre, :class => "signup_button round", :id =>"box" , :placeholder => "Buscar"  %>

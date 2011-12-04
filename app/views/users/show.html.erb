@@ -1,30 +1,6 @@
 <%= render('style') %>
 <div class="seccion2">
-	<div class="span-7">
-		<div id = "perfil">
-			<h3 class="fotonombre"><%= link_to "@" + @user, user_path(@user) %></h3><div id="foto"></div>
-		</div>
-		<div class="submenu">
-			<h4 align="center">Seguidores</h4>
-			<ul>
-				<% @seguidores.each do |segui| %>
-				<li>
-					<a><%= link_to "@" + segui.seudonimo, user_path(segui.seudonimo) %> (<%= segui.nombre %>)</a>
-				</li>
-				<% end %>
-			</ul>
-		</div>
-		<div class="submenu">
-			<h4 align="center">Siguiendo</h4>
-			<ul>
-				<% @siguiendo.each do |segui| %>
-				<li>
-					<a><%= link_to "@" + segui.seudonimo, user_path(segui.seudonimo) %> (<%= segui.nombre %>)</a>
-				</li>
-				<% end %>
-			</ul>
-		</div>
-	</div>
+	<%= render('menuDer') %>
 	<div class="span-14">
 		<div id="formperfil">
 			<div id="imagenPerfil"></div>
@@ -58,22 +34,8 @@
 			<p id="notice">
 				<%= notice %>
 			</p>
-			<table width="80%">
-				<% @comentarios.each do |comen| %>
-				<tr align="Center">
-					<td><b><%= comen.seudonimo %></b> <%= comen.nombre %></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td colspan="2"><%= comen.comentario %></td>
-				</tr>
-				<% end %>
-			</table>
+<%= render ('tablas') %>
 		</div>
 	</div>
 </div>
-<script>
-function cuenta() {
-document.getElementById("caracteresTwitter").value=document.getElementById("twittear").value.length
-}
-</script>
+

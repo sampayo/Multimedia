@@ -17,6 +17,7 @@ SampleApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   match '/validar', :to => 'pages#validar', :as => 'validar'
+  match '/buscar', :to => 'pages#buscar', :as => 'buscar'
 
   #user
   match 'timeline', :to => 'users#new', :as => 'time'

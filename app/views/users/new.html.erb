@@ -1,57 +1,23 @@
 <%= render('style') %>
 <div class="seccion2">
-<div class="span-7">
-	<div id = "perfil">
-		<h3 class="fotonombre"><%= link_to "@" + @user, user_path(@user) %></h3><div id="foto"></div> 
-	</div>
-	<div class="submenu">
-		<h4 align="center">Seguidores</h4>
-		<ul>
-			<% @seguidores.each do |segui| %>
-			<li>
-				<a><%= link_to "@" + segui.seudonimo, user_path(segui.seudonimo) %> (<%= segui.nombre %>)</a>
-			</li>
-			<% end %>
-		</ul>
-	</div>
-	<div class="submenu">
-		<h4 align="center">Siguiendo</h4>
-		<ul>
-			<% @siguiendo.each do |segui| %>
-			<li>
-				<a><%= link_to "@" + segui.seudonimo, user_path(segui.seudonimo) %> (<%= segui.nombre %>)</a>
-			</li>
-			<% end %>
-		</ul>
-	</div>
-</div>
-<div class="span-14">
-	<h3>Que esta pasando?</h3>
-	<%= form_for(:pages, :url => {:controller => 'pages', :action => 'validar'}) do |f| %>
-	<div id="formHeader">
-		<%= f.text_area :nombre, :class => "signup_button round", :id => "twittear", :maxlength => "140", :onKeyDown => "cuenta()", :onKeyUp => "cuenta()"  %>
+	<%= render('menuDer') %>
+	<div class="span-14">
+		<h3>Que esta pasando?</h3>
+		<%= form_for(:comentario, :url => {:controller => 'comentarios', :action => 'create'}) do |f| %>
+		<div id="formHeader">
+			<%= f.text_area :nombre, :class => "signup_button round", :id => "twittear", :maxlength => "140", :onKeyDown => "cuenta()", :onKeyUp => "cuenta()"  %>
 
-		<%= f.submit :class => "round", :id => "buttonTwitter" , :value => 'Twttear'  %>
-		<input type="text" name='caracteres' id="caracteresTwitter" readonly="readonly">
+			<%= f.submit :class => "round", :id => "buttonTwitter" , :value => 'Twittear'  %>
+			<input type="text" name='caracteres' id="caracteresTwitter" readonly="readonly">
+		</div>
+		<% end %>
+		<div >
+			<p id="notice">
+				<%= notice %>
+			</p>
+<%= render ('tablas') %>
+		</div>
 	</div>
-	<% end %>
-	<div >
-		<p id="notice">
-			<%= notice %>
-		</p>
-		<table width="80%">
-			<% @comentarios.each do |comen| %>
-			<tr align="Center">
-				<td><b><%= comen.seudonimo %></b> <%= comen.nombre %></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="2"><%= comen.comentario %></td>
-			</tr>
-			<% end %>
-		</table>
-	</div>
-</div>
 </div>
 <script>
 function cuenta() {
