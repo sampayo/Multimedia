@@ -34,6 +34,7 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
+
     @title = 'Editar cuenta'
     @paises = ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
       "Anguilla", "Antarctica", "Antigua And Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria",
@@ -72,6 +73,7 @@ class UsuariosController < ApplicationController
       "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela",
       "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara",
       "Yemen", "Zambia", "Zimbabwe"]
+
     @usuario = Usuario.find(params[:id])
   end
 
@@ -122,23 +124,10 @@ class UsuariosController < ApplicationController
   def perfil
     @title = 'Editar perfil'
     @usuario = Usuario.find(params[:id])
+    archivo = params[:foto]
+    name = @usuario.seudonimo + ".jpg"
+    directory = "images/fotos/"
+    path = File.join(directory, name)
 
-  end
-
-  def saveFoto
-    @user = session[:nombre]
-    @usuario = Usuario.where(:seudonimo => @user).first
-    post = Usuario.save(params[:file])
-    # @archivo = params[:file]
-    # @archivo = '~/Users/RicardoSampayo/twitter.jpg'
-    # @archivo = @archivo['file']
-    # name = @usuario.seudonimo + ".jpg"
-    # name = @archivo.original_filename
-    # directory = "public/"
-    # path = File.join(directory, name)
-  # FileUtils.cp @archivo, path
-  # # YOUR PARSING JOB
-  # FileUtils.rm path
-  # File.open(path, "wb") { |f| f.write(@archivo.read) }
   end
 end

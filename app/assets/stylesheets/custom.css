@@ -151,7 +151,6 @@ input[placeholder], [placeholder], *[placeholder] {
 	background-color: #eee;
 	/*	opacity: 0.4;
 	 filter: alpha(opacity=40);*/
-	text-align:justify;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
@@ -168,7 +167,7 @@ input[placeholder], [placeholder], *[placeholder] {
 	width: 80px;
 	height: 80px;
 	/*	background-size: 100%;*/
-	background-image: url('fotos/twitter.jpg');
+	background-image: url(fotos/twitter.jpg);
 }
 .menu-holder {
 	border-bottom: 1px solid #ccffff;
@@ -250,37 +249,7 @@ input[placeholder], [placeholder], *[placeholder] {
 	margin-left: 160px;
 	min-height: 140px;
 }
-#informacion2 {
-	width: 300px;
-	margin-left: 160px;
-	min-height: 140px;
-	margin-top: 80px
-}
 hash {
 	font-weight: bold;
 	color: #4c4c4c;
-}
-#updates input {
-	width: 260px;
-	height: 20px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-}
-#updates textarea {
-	width: 250px;
-	height: 100px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-}
-#updates #button {
-	width: 100px;
-}
-.editar{
-	padding-top: 10px
-}
-#nombre{
-/*	border: none;*/
-	font-weight: bold;
 }
