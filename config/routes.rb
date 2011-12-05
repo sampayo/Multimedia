@@ -9,6 +9,8 @@ SampleApp::Application.routes.draw do
 
   resources :users
 
+  resources :pictures
+
   get "users/new"
 
   match '/signup', :to => 'users#new'
@@ -25,13 +27,17 @@ SampleApp::Application.routes.draw do
   match '/save', :to => 'users#save'
   match '/destroy', :to => 'users#destroy'
 
-
-
   # usuario
   match 'usuarios/:id/perfil', :to => 'usuarios#perfil', :as => 'perfil'
+# 
+  # # usuario
+  # match 'usuarios/:id/perfil', :to => 'usuarios#perfil', :as => 'perfil'
+  
+  #fotos
+    match 'perfil/new', :to => 'pictures#new', :as => 'newimages'
 
-  # usuario
-  match 'usuarios/:id/perfil', :to => 'usuarios#perfil', :as => 'perfil'
+  
+  
   # get "pages/home"
 
   # get "pages/contact"

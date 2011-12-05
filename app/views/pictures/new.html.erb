@@ -1,0 +1,23 @@
+<%= render('users/style') %>
+<div class="seccion2">
+	<h1>Configuracion</h1>
+	<%= render('usuarios/menuDer') %>
+	<div class="editar">
+		
+		<div id="formperfil">
+			<div id="imagenPerfil"></div>
+			<div id ="informacion2">
+				<p>Carga tu imagen de perfil, solo archivos JEPG</p>
+				<%= form_for(@foto, :html => { :multipart => true }) do |f| %>
+				<div class="field">
+					<%= f.file_field :avatar %>
+				</div>
+				<div class="actions">
+					<%= f.submit "Create" %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+		<%= link_to 'Atras', user_path(@usuario.seudonimo) %>
+	</div>
+</div>

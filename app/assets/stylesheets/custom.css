@@ -249,7 +249,39 @@ input[placeholder], [placeholder], *[placeholder] {
 	margin-left: 160px;
 	min-height: 140px;
 }
+#informacion2 {
+	width: 300px;
+	margin-left: 160px;
+	min-height: 140px;
+	padding-top: 50px;
+	padding-left: 20px;
+}
+.editar {
+padding-top: 50px;
+}
+
 hash {
 	font-weight: bold;
 	color: #4c4c4c;
+}
+#updates input {
+	width: 260px;
+	height: 20px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+#updates textarea {
+	width: 250px;
+	height: 100px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+#updates #button {
+	width: 100px;
+}
+#nombre{
+/*	border: none;*/
+	font-weight: bold;
 }

@@ -2,7 +2,7 @@
   #foto, #imagenPerfil {
   	<% if !(@usuario.foto.nil?) %>
 	background-size: 100%;
-	background-image: url(<%= image_path("fotos/"+@usuario.foto) %>);
+	background-image: url('http://localhost:3000/system/avatars/17/perfil.jpg');
 	<% else %>
 	background-size: 100%;
 	<% end %>

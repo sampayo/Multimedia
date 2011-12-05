@@ -5,7 +5,7 @@
 	<div class="editar">
 	<%= render('menuDer') %>
 	<div id="formperfil">
-			<div id="imagenPerfil"></div>
+			
 			<div id ="informacion2">
 				<h2><%= @usuario.nombre %></h2>
 				<%= form_for(:user, :url => {:controller => 'usuarios', :action => 'perfil'}) do |f| %>
@@ -18,7 +18,7 @@
 				
 
 				<%end %>
-			</div>
+			</div><div id="imagenPerfil"></div>
 		</div>
 	
 	<%= link_to 'Atras', user_path(@usuario.seudonimo) %>

@@ -1,10 +1,9 @@
-
 <%= render('users/style') %>
 <div class="seccion2">
 	<h1>Configuracion</h1>
-	<div class="editar">
 	<%= render('menuDer') %>
-	<%= render 'form' %>
-	<%= link_to 'Atras', user_path(@usuario.seudonimo) %>
+	<div class="editar">
+		<%= render 'form' %>
+		<%= link_to 'Atras', user_path(@usuario.seudonimo) %>
 	</div>
 </div>
